@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>Hexo+Github搭建个人博客折腾笔记</title>
+      <link href="/2024/01/22/Hexo%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/"/>
+      <url>/2024/01/22/Hexo%E6%8A%98%E8%85%BE%E6%97%A5%E8%AE%B0/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装hexo权限报错问题"><a href="#安装hexo权限报错问题" class="headerlink" title="安装hexo权限报错问题"></a>安装hexo权限报错问题</h1><p>Ubuntu+Hexo+Github 搭建个人博客记录<br>‍</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221207871.png">​</p><p>‍</p><p>参照官方教程</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221207157.png">​</p><p><a href="https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally">https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally</a></p><p>即可解决</p><ol><li>Back up your computer.备份您的计算机。</li><li>On the command line, in your home directory, create a directory for global installations:在命令行的主目录中，为全局安装创建一个目录：<br> ​<code>mkdir ~/.npm-global</code>​</li><li>Configure npm to use the new directory path:配置 npm 以使用新的目录路径：<br> ​<code>npm config set prefix &#39;~/.npm-global&#39;</code>​</li><li>In your preferred text editor, open or create a <code>~/.profile</code>​ file and add this line:在首选文本编辑器中，打开或创建一个 <del>&#x2F;.profile 文件并添加以下行：<br> ​&#96;export PATH&#x3D;</del>&#x2F;.npm-global&#x2F;bin:$PATH&#96;​</li><li>On the command line, update your system variables:在命令行上，更新系统变量：<br> ​<code>source ~/.profile</code>​</li><li>To test your new configuration, install a package globally without using <code>sudo</code>​:若要测试新配置，请全局安装包，而不使用 sudo ：<br> ​<code>npm install -g jshint</code>​</li></ol><h1 id="安装流程"><a href="#安装流程" class="headerlink" title="安装流程"></a>安装流程</h1><ol><li><p>sudo apt install nodejs</p></li><li><p>sudo apt install npm</p></li><li><p>​<code>npm install hexo-cli -g</code>​</p></li><li><p>​<code>npm install hexo -g</code>​</p></li><li><p>​<code>hexo init</code>​ “Start blogging with Hexo！”打印，说明初始化完成</p><p> ​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221207116.png">​</p></li><li><p>​<code>hexo g #generate 生成静态文件</code>​ 报错</p><p> ​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221207564.png">​</p><p> 可能是nodejs版本太低导致</p><p> ​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221207583.png">​</p><p> 安装Ubuntu nodejs版本管理工具 n</p> <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install npm</span><br><span class="line">sudo npm install -g n</span><br></pre></td></tr></table></figure><p> 将node 升级到14</p><p> ​<code>sudo n 14</code>​</p><p> ​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221207122.png">​</p></li><li><p>hexo s 启动</p><p> ​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221208681.png">​</p></li></ol><p>此时已经得到一个原始的Blog</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221208640.png">​</p><p>‍</p><h1 id="配置github"><a href="#配置github" class="headerlink" title="配置github"></a>配置github</h1><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221208748.png">​</p><p>‍</p><p>ssh无法连接导致仓库传不上去</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221208353.png">​</p><p>解决</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221208867.png">​</p><p>‍</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221209514.png">​</p><p><a href="https://liuyfen.github.io/">https://liuyfen.github.io/</a></p><p>现在查看github仓库已经传上去了</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221210904.png">​</p><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221211009.png">​</p><p>接下来就是修改主题</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">https://www.guifei.site/2022/07/20/hexo%E5%8D%9A%E5%AE%A2%E5%AE%89%E8%A3%85Butterfly%E4%B8%BB%E9%A2%98/</span><br><span class="line">https://blog.csdn.net/mjh1667002013/article/details/129290903</span><br></pre></td></tr></table></figure><h1 id="暂时效果"><a href="#暂时效果" class="headerlink" title="暂时效果"></a>暂时效果</h1><p>​<img src="https://hexo-19989hexo-1233-1310773284.cos.ap-nanjing.myqcloud.com/202401221211301.png">​</p><p>‍</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 杂 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 折腾日记 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+  
+  
+</search>
