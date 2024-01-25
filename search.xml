@@ -22,6 +22,8 @@
             
             <tag> Linux </tag>
             
+            <tag> 折腾笔记 </tag>
+            
         </tags>
       
     </entry>
@@ -45,7 +47,7 @@
       
         <tags>
             
-            <tag> 折腾日记 </tag>
+            <tag> 折腾笔记 </tag>
             
         </tags>
       
@@ -71,6 +73,10 @@
         <tags>
             
             <tag> 免杀 </tag>
+            
+            <tag> Mimikatz </tag>
+            
+            <tag> 红队基础设施 </tag>
             
         </tags>
       
